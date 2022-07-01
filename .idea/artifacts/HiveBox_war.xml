@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HiveBox:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HiveBox</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HiveBox-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HiveBox:war exploded" />
+    </root>
+  </artifact>
+</component>
