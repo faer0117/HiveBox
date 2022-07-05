@@ -1,6 +1,6 @@
 package jdbc.dao;
 
-import jdbc.utils.C3p0Utils;
+import jdbc.util.C3p0Utils;
 import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.SQLException;

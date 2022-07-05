@@ -1,12 +1,10 @@
 package jdbc.dao;
 
 import jdbc.javabean.Order;
-import jdbc.utils.C3p0Utils;
+import jdbc.util.C3p0Utils;
 import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Orders_Insert {
     //订单表插入

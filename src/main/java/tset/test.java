@@ -5,10 +5,14 @@ import jdbc.dao.Orders_Insert;
 import jdbc.dao.Orders_Select;
 import jdbc.dao.Users_Delete;
 import jdbc.dao.Users_Select;
+import jdbc.dao.api.UserDao;
+import jdbc.dao.impl.UserDaoImpl;
 import jdbc.javabean.Order;
 import jdbc.javabean.User;
+import jdbc.util.JDBCUtils;
 import org.junit.Test;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -92,4 +96,78 @@ public class test {
         }
     }
 
+
+    /*
+    7.5改变连接池和方法之后的测试
+     */
+    //测试德鲁伊连接池
+    @Test
+    public void druidConnectionTest() throws SQLException {
+        Connection connection = JDBCUtils.getConnection();
+
+        System.out.println(connection);
+    }
+    //测试getById方法
+    @Test
+    public void ByNameTest() throws SQLException {
+        UserDao userDao = new UserDaoImpl();
+        Connection connection = JDBCUtils.getConnection();
+        String username ="张健发";
+        User user = new User();
+        user = userDao.getUserByName(connection,username);
+        System.out.println(user.toString());
+    }
+    //测试getall方法
+    @Test
+    public void getAllTest(){
+        UserDao userDao = new UserDaoImpl();
+        Connection connection = null;
+        try {
+            connection = JDBCUtils.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        List<User> list = userDao.getAll(connection);
+        for (User user:list) {
+            System.out.println(user.toString());
+        }
+
+    }
+
+    //测试checkuser方法
+    @Test
+    public void checkuserTest(){
+        try {
+            UserDao userDao = new UserDaoImpl();
+            Connection connection = JDBCUtils.getConnection();
+            Boolean f;
+            String username = "张健发";
+            String password = "0000";
+            f = userDao.checkUser(connection,username,password);
+            System.out.println(f);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //测试insert方法
+    @Test
+    public void insertTest(){
+        int f = 0;
+        try {
+            UserDao userDao = new UserDaoImpl();
+            Connection connection = JDBCUtils.getConnection();
+            User user = new User("张三丰","123456","男","1666-01-01","18850689890","zsf@163.com","泉州市丰泽区东海湾2233号","大专","拳师");
+            f = userDao.insert(connection,user);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        } finally {
+            if (f > 0) {
+                System.out.println("成功插入"+f+"条记录");
+            }else {
+                System.out.println("插入失败");
+            }
+        }
+
+    }
 }
