@@ -1,8 +1,7 @@
 package jdbc.dao;
 
 import jdbc.javabean.Order;
-import jdbc.javabean.User;
-import jdbc.utils.C3p0Utils;
+import jdbc.util.C3p0Utils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;

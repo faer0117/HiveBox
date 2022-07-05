@@ -165,6 +165,62 @@
             <div class="info-right-in">
                 <div class="info-right-title">
                     <span>个人信息</span>
+                    <div class="changee-info">
+                        <!-- 按钮：用于打开模态框 -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            修改信息
+                        </button>
+                        <%--                        提交表单--%>
+                        <form action="" method="post">
+                            <!-- 模态框 -->
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                        <!-- 模态框头部 -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">修改个人信息</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- 模态框主体 -->
+                                        <div class="modal-body">
+                                            <div class="modal-body-content">
+                                                <!-- 内容 -->
+                                                <div>
+                                                    <label for="">用户名:</label>
+                                                    <input type="text" name="" id="">
+                                                </div>
+                                                <div>
+                                                    <label for="">手机号码:</label>
+                                                    <input type="tel" name="" id="">
+                                                </div>
+                                                <div>
+                                                    <label for="">电子邮箱</label>
+                                                    <input type="email" name="" id="">
+                                                </div>
+
+                                                <div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 模态框底部 -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">关闭</button>
+                                                <button type="submit" class="btn btn-primary">确定</button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="info-right-context">

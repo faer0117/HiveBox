@@ -83,4 +83,33 @@ public class User {
         Birthday = birthday;
     }
 
+    public User() {
+    }
+
+    public User(String userName, String password, String sex, String birthday, String phoneNumber, String email, String address, String education, String job) {
+        UserName = userName;
+        Password = password;
+        Sex = sex;
+        Birthday = birthday;
+        PhoneNumber = phoneNumber;
+        Email = email;
+        Address = address;
+        Education = education;
+        Job = job;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "UserName='" + UserName + '\'' +
+                ", Password='" + Password + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Birthday='" + Birthday + '\'' +
+                ", PhoneNumber='" + PhoneNumber + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Address='" + Address + '\'' +
+                ", Education='" + Education + '\'' +
+                ", Job='" + Job + '\'' +
+                '}';
+    }
 }

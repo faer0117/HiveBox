@@ -289,6 +289,30 @@ a {
     line-height: 50px;
 }
 
+
+
+.changee-info {
+    height: 30px;
+    width: 100px;
+    float: right;
+    display: inline-block;
+
+}
+
+.modal-content {
+    margin-top: 100px;
+}
+
+.modal-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body-content div input {
+    height: 30px;
+}
+
 .info-right-title span {
     margin-left: 20px;
 }
